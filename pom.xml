@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>server.markhome.mcf</groupId>
+			<artifactId>server.markhome.mcf.v3_1</artifactId>
+		<version>3.1.42</version>
+	</parent>
+	<groupId>server.markhome.mcf.v3_1</groupId>
 <!--
    Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
@@ -20,21 +28,13 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+  <!--groupId>org.apache.jena</groupId-->
 
   <name>Apache Jena</name>
-  <groupId>org.apache.jena</groupId>
   <artifactId>jena</artifactId>
   <packaging>pom</packaging>
   <url>https://jena.apache.org/</url>
   <version>6.3.0-SNAPSHOT</version>
-
-  <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>39</version>
-  </parent>
 
   <licenses>
     <license>
@@ -48,12 +48,12 @@
     <url>https://www.apache.org/</url>
   </organization>
 
-  <scm>
+  <!--scm>
     <connection>scm:git:https://gitbox.apache.org/repos/asf/jena.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/jena.git</developerConnection>
     <url>https://gitbox.apache.org/repos/asf/jena.git</url>
     <tag>HEAD</tag>
-  </scm>
+  </scm-->
 
   <properties>
     <!-- Build -->
@@ -299,7 +299,8 @@
     <dependencies>
 
       <dependency>
-        <groupId>org.junit</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.junit</groupId-->
         <artifactId>junit-bom</artifactId>
         <version>${ver.junit}</version>
         <type>pom</type>
@@ -307,67 +308,78 @@
       </dependency>
 
       <dependency>
-        <groupId>junit</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>junit</groupId-->
         <artifactId>junit</artifactId>
         <version>${ver.junit4}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>commons-codec</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>commons-codec</groupId-->
         <artifactId>commons-codec</artifactId>
         <version>${ver.commons-codec}</version>
       </dependency>
 
       <dependency>
-        <groupId>commons-io</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>commons-io</groupId-->
         <artifactId>commons-io</artifactId>
         <version>${ver.commons-io}</version>
       </dependency>
 
        <dependency>
-        <groupId>commons-cli</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>commons-cli</groupId-->
         <artifactId>commons-</artifactId>
         <version>${ver.commons-io}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-compress</artifactId>
         <version>${ver.commons-compress}</version>
         <exclusions>
           <exclusion>
             <!-- This is scope=provided but interferes with log4j JENA-2137 -->
-            <groupId>org.osgi</groupId>
+        	<groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.osgi</groupId-->
             <artifactId>org.osgi.core</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-rdf-api</artifactId>
         <version>${ver.commons-rdf}</version>
       </dependency>
 
       <!-- Protobuf only, not gRPC -->
       <dependency>
-        <groupId>com.google.protobuf</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.google.protobuf</groupId-->
         <artifactId>protobuf-java</artifactId>
         <version>${ver.protobuf}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.thrift</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.thrift</groupId-->
         <artifactId>libthrift</artifactId>
         <version>${ver.libthrift}</version>
         <exclusions>
           <exclusion>
-            <groupId>org.apache.commons</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.apache.commons</groupId-->
             <artifactId>commons-lang3</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>org.slf4j</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.slf4j</groupId-->
             <artifactId>*</artifactId>
           </exclusion>
 
@@ -376,56 +388,66 @@
                only the binary data format.
           -->
           <exclusion>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>*</artifactId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.apache.httpcomponents.client5</groupId-->
+            <artifactId>client5*</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>org.apache.httpcomponents.core5</groupId>
-            <artifactId>*</artifactId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.apache.httpcomponents.core5</groupId-->
+            <artifactId>core5*</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>*</artifactId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>jakarta.servlet</groupId-->
+            <artifactId>servlet*</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>*</artifactId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>jakarta.annotation</groupId-->
+            <artifactId>annotation*</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-csv</artifactId>
         <version>${ver.commons-csv}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-lang3</artifactId>
         <version>${ver.commons-lang3}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-math4-legacy</artifactId>
         <version>${ver.commons-math4}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-collections4</artifactId>
         <version>${ver.commons-collections}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.commons</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.commons</groupId-->
         <artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
         <version>${ver.commons-fileupload}</version>
       </dependency>
 
        <dependency>
-         <groupId>com.opencsv</groupId>
+         <groupId>server.markhome.mcf.v3_1</groupId>
+         <!--groupId>com.opencsv</groupId-->
          <artifactId>opencsv</artifactId>
          <version>${ver.opencsv}</version>
          <exclusions>
@@ -466,7 +488,8 @@
       -->
       <!--
       <dependency>
-        <groupId>com.google.errorprone</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!- -groupId>com.google.errorprone</groupId- ->
         <artifactId>error_prone_annotations</artifactId>
         <version>VERSION</version>
       </dependency>
@@ -475,19 +498,22 @@
           jspecify comes from gauva, caffeine, junit and micrometer. 
       -->
       <dependency>
-        <groupId>org.jspecify</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.jspecify</groupId-->
         <artifactId>jspecify</artifactId>
         <version>1.0.1</version>
       </dependency>
 
       <dependency>
-        <groupId>com.google.code.gson</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.google.code.gson</groupId-->
         <artifactId>gson</artifactId>
         <version>${ver.gson}</version>
         <!--
         <exclusions>
           <exclusion>
-            <groupId>com.google.errorprone</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!- -groupId>com.google.errorprone</groupId- ->
             <artifactId>error_prone_annotations</artifactId>
           </exclusion>
         </exclusions>
@@ -495,32 +521,38 @@
       </dependency>
 
       <dependency>
-        <groupId>com.github.ben-manes.caffeine</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.github.ben-manes.caffeine</groupId-->
         <artifactId>caffeine</artifactId>
         <version>${ver.caffeine}</version>
         <exclusions>
           <exclusion>
-            <groupId>org.checkerframework</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.checkerframework</groupId-->
             <artifactId>checker-qual</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>com.google.errorprone</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>com.google.errorprone</groupId-->
             <artifactId>error_prone_annotations</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
 
       <dependency>
-        <groupId>com.google.guava</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.google.guava</groupId-->
         <artifactId>guava</artifactId>
         <version>${ver.guava}</version>
         <exclusions>
           <exclusion>
-            <groupId>org.checkerframework</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.checkerframework</groupId-->
             <artifactId>checker-qual</artifactId>
           </exclusion>
           <exclusion>
-            <groupId>com.google.errorprone</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>com.google.errorprone</groupId-->
             <artifactId>error_prone_annotations</artifactId>
           </exclusion>
         </exclusions>
@@ -528,7 +560,8 @@
 
       <!-- supports persistent data structures -->
       <dependency>
-        <groupId>com.github.andrewoma.dexx</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.github.andrewoma.dexx</groupId-->
         <artifactId>collection</artifactId>
         <version>${ver.dexxcollection}</version>
       </dependency>
@@ -537,7 +570,8 @@
       <!-- Titanium JSON-LD -->
       <dependency>
         <!-- Apache License -->
-        <groupId>com.apicatalog</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.apicatalog</groupId-->
         <artifactId>titanium-json-ld</artifactId>
         <version>${ver.titanium-json-ld}</version>
       </dependency>
@@ -548,14 +582,16 @@
           in jena-arq.
       -->
       <dependency>
-        <groupId>jakarta.json</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>jakarta.json</groupId-->
         <artifactId>jakarta.json-api</artifactId>
         <version>${ver.jakarta.json}</version>
       </dependency>
 
       <!-- Eclipse Public License 2.0 (category-B) -->
       <dependency>
-        <groupId>org.glassfish</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.glassfish</groupId-->
         <artifactId>jakarta.json</artifactId>
         <version>${ver.jakarta.json}</version>
       </dependency>
@@ -563,13 +599,15 @@
 
       <!-- Ensure the properties align the jakarta.servlet-api version to that of Jetty. -->
       <dependency>
-        <groupId>jakarta.servlet</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>jakarta.servlet</groupId-->
         <artifactId>jakarta.servlet-api</artifactId>
         <version>${ver.jakarta-servlet}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.eclipse.jetty</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.eclipse.jetty</groupId-->
         <artifactId>jetty-bom</artifactId>
         <version>${ver.jetty}</version>
         <scope>import</scope>
@@ -577,7 +615,8 @@
       </dependency>
 
       <dependency>
-        <groupId>org.eclipse.jetty.ee11</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.eclipse.jetty.ee11</groupId-->
         <artifactId>jetty-ee11-bom</artifactId>
         <version>${ver.jetty}</version>
         <scope>import</scope>
@@ -585,7 +624,8 @@
       </dependency>
 
       <dependency>
-        <groupId>org.apache.shiro</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.shiro</groupId-->
         <artifactId>shiro-bom</artifactId>
         <version>${ver.shiro}</version>
         <scope>import</scope>
@@ -594,39 +634,45 @@
 
       <!-- Lucene dependencies -->
       <dependency>
-        <groupId>org.apache.lucene</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.lucene</groupId-->
         <artifactId>lucene-core</artifactId>
         <version>${ver.lucene}</version>
         <type>jar</type>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.lucene</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.lucene</groupId-->
         <artifactId>lucene-analysis-common</artifactId>
         <version>${ver.lucene}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.lucene</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.lucene</groupId-->
         <artifactId>lucene-queryparser</artifactId>
         <version>${ver.lucene}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.lucene</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.lucene</groupId-->
         <artifactId>lucene-highlighter</artifactId>
         <version>${ver.lucene}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.lucene</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.lucene</groupId-->
         <artifactId>lucene-backward-codecs</artifactId>
         <version>${ver.lucene}</version>
       </dependency>
 
       <!-- Logging -->
       <dependency>
-        <groupId>org.slf4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.slf4j</groupId-->
         <artifactId>slf4j-bom</artifactId>
         <version>${ver.slf4j}</version>
         <type>pom</type>
@@ -635,7 +681,8 @@
 
       <!-- Log4j2 -->
       <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.logging.log4j</groupId-->
         <artifactId>log4j-bom</artifactId>
         <version>${ver.log4j2}</version>
         <scope>import</scope>
@@ -643,7 +690,8 @@
       </dependency>
 
       <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.logging.log4j</groupId-->
         <artifactId>log4j-slf4j2-impl</artifactId>
         <version>${ver.log4j2}</version>
         <optional>true</optional>
@@ -655,25 +703,29 @@
            and cause an enforcer error.
       -->
       <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.logging.log4j</groupId-->
         <artifactId>log4j-api</artifactId>
         <version>${ver.log4j2}</version>
         <optional>true</optional>
         <exclusions>
           <exclusion>
-            <groupId>org.osgi</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.osgi</groupId-->
             <artifactId>org.osgi.core</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
       <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.logging.log4j</groupId-->
         <artifactId>log4j-core</artifactId>
         <version>${ver.log4j2}</version>
         <optional>true</optional>
         <exclusions>
           <exclusion>
-            <groupId>org.osgi</groupId>
+            <groupId>server.markhome.mcf.v3_1</groupId>
+            <!--groupId>org.osgi</groupId-->
             <artifactId>org.osgi.core</artifactId>
           </exclusion>
         </exclusions>
@@ -682,19 +734,22 @@
       <!-- Commons Logging intercept -->
 
       <dependency>
-        <groupId>org.slf4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.slf4j</groupId-->
         <artifactId>jcl-over-slf4j</artifactId>
         <version>${ver.slf4j}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.slf4j</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.slf4j</groupId-->
         <artifactId>jul-to-slf4j</artifactId>
         <version>${ver.slf4j}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.roaringbitmap</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.roaringbitmap</groupId-->
         <artifactId>RoaringBitmap</artifactId>
         <version>${ver.roaringbitmap}</version>
       </dependency>
@@ -715,40 +770,46 @@
       </dependency>
 
       <dependency>
-        <groupId>org.openjdk.jmh</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.openjdk.jmh</groupId-->
         <artifactId>jmh-core</artifactId>
         <version>${ver.org.openjdk.jmh}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>org.openjdk.jmh</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.openjdk.jmh</groupId-->
         <artifactId>jmh-generator-annprocess</artifactId>
         <version>${ver.org.openjdk.jmh}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>org.mockito</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.mockito</groupId-->
         <artifactId>mockito-core</artifactId>
         <version>${ver.mockito}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>org.awaitility</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.awaitility</groupId-->
         <artifactId>awaitility</artifactId>
         <version>${ver.awaitility}</version>
       </dependency>
 
       <dependency>
-        <groupId>io.micrometer</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>io.micrometer</groupId-->
         <artifactId>micrometer-core</artifactId>
         <version>${ver.micrometer}</version>
       </dependency>
 
       <dependency>
-        <groupId>io.micrometer</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>io.micrometer</groupId-->
         <artifactId>micrometer-registry-prometheus</artifactId>
         <version>${ver.micrometer}</version>
       </dependency>
@@ -756,37 +817,43 @@
       <!-- jena-geosparql, jena-fuseki-geosparql related -->
 
       <dependency>
-        <groupId>com.esotericsoftware.kryo</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.esotericsoftware.kryo</groupId-->
         <artifactId>kryo5</artifactId>
         <version>${ver.kryo}</version>
       </dependency>
 
       <dependency>
-        <groupId>com.beust</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>com.beust</groupId-->
         <artifactId>jcommander</artifactId>
         <version>${ver.jcommander}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.apache.sis.core</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.apache.sis.core</groupId-->
         <artifactId>sis-referencing</artifactId>
         <version>${ver.sis}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.locationtech.jts</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.locationtech.jts</groupId-->
         <artifactId>jts-core</artifactId>
         <version>${ver.jts}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.locationtech.jts.io</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.locationtech.jts.io</groupId-->
         <artifactId>jts-io-common</artifactId>
         <version>${ver.jts}</version>
       </dependency>
 
       <dependency>
-        <groupId>org.jdom</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.jdom</groupId-->
         <artifactId>jdom2</artifactId>
         <version>${ver.jdom2}</version>
       </dependency>
@@ -796,14 +863,16 @@
       <!-- BEGIN jena-fuseki-mod-geosparql -->
       <!-- Dependencies to test the mod's HTML interface. -->
       <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>org.seleniumhq.selenium</groupId-->
         <artifactId>selenium-java</artifactId>
         <version>${ver.selenium-java}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
-        <groupId>io.github.bonigarcia</groupId>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <!--groupId>io.github.bonigarcia</groupId-->
         <artifactId>webdrivermanager</artifactId>
         <version>${ver.webdrivermanager}</version>
         <scope>test</scope>

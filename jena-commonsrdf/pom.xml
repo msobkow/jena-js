@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>server.markhome.mcf</groupId>
+			<artifactId>server.markhome.mcf.v3_1</artifactId>
+		<version>3.1.42</version>
+	</parent>
+	<groupId>server.markhome.mcf.v3_1</groupId>
 <!--
    Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
@@ -20,17 +28,8 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
   <artifactId>jena-commonsrdf</artifactId>
   <packaging>jar</packaging>
-
-  <parent>
-    <groupId>org.apache.jena</groupId>
-    <artifactId>jena</artifactId>
-    <version>6.3.0-SNAPSHOT</version>
-  </parent>
 
   <name>Apache Jena - CommonsRDF for Jena</name>
   <description>Apache CommonsRDF Java library for Apache Jena</description>
@@ -44,19 +43,22 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.jena</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.apache.jena</groupId-->
       <artifactId>jena-arq</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.commons</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.apache.jena</groupId-->
       <artifactId>commons-rdf-api</artifactId>
     </dependency>
 
     <!-- Uses JUnit4 -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.apache.commons</groupId-->
       <artifactId>commons-rdf-api</artifactId>
       <version>${ver.commons-rdf}</version>
       <classifier>tests</classifier>
@@ -65,20 +67,23 @@
 
     <!-- Used for testing and examples -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.apache.commons</groupId-->
       <artifactId>commons-rdf-simple</artifactId>
       <version>${ver.commons-rdf}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.junit.vintage</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.junit.vintage</groupId-->
       <artifactId>junit-vintage-engine</artifactId>
       <scope>test</scope>
     </dependency>
 
      <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
+      <groupId>server.markhome.mcf.v3_1</groupId>
+      <!--groupId>org.apache.logging.log4j</groupId-->
       <artifactId>log4j-slf4j2-impl</artifactId>
       <scope>test</scope>
     </dependency>
