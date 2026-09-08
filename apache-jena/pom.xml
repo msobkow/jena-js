@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>server.markhome.mcf</groupId>
-			<artifactId>server.markhome.mcf.v3_1</artifactId>
-		<version>3.1.42</version>
-	</parent>
-	<groupId>server.markhome.mcf.v3_1</groupId>
 <!--
    Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
@@ -28,11 +20,14 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <!-- Build the Jena download file.
        Assumes it is run as part of the module build (not run standalone)
        with a complete svn tree for the active codebase available.
   -->
 
+  <modelVersion>4.0.0</modelVersion>
   <artifactId>apache-jena</artifactId>
   <packaging>pom</packaging>
   <name>Apache Jena - Distribution</name>
@@ -40,6 +35,12 @@
   <description>
     Apache Jena is a API and toolkit for working with semantic web technologies such as RDF and SPARQL using Java.  This artifact represents the source and binary distribution packages generated for releases.
   </description>
+
+  <parent>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena</artifactId>
+    <version>6.3.0-SNAPSHOT</version>
+  </parent>
 
   <organization>
     <name>Apache Jena</name>
@@ -58,13 +59,13 @@
       Enumerate dependencies explicitly to get source as well.
     -->
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-core</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-core</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -72,13 +73,13 @@
     </dependency>
 
      <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-ontapi</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-ontapi</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -86,13 +87,13 @@
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -100,13 +101,13 @@
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-rdfconnection</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-rdfconnection</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -114,13 +115,13 @@
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shacl</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shacl</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -128,13 +129,13 @@
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shex</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shex</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>
@@ -142,21 +143,20 @@
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-cmds</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Require a logging implementation for command line tools --> 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.logging.log4j</groupId-->
+      <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j2-impl</artifactId>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-cmds</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>sources</classifier>

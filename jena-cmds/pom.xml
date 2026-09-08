@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>server.markhome.mcf</groupId>
-			<artifactId>server.markhome.mcf.v3_1</artifactId>
-		<version>3.1.42</version>
-	</parent>
-	<groupId>server.markhome.mcf.v3_1</groupId>
 <!--
    Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
@@ -27,6 +19,14 @@
     
      SPDX-License-Identifier: Apache-2.0
 -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena</artifactId>
+    <version>6.3.0-SNAPSHOT</version>
+  </parent> 
 
   <name>Apache Jena - Command line tools</name>
   <artifactId>jena-cmds</artifactId>
@@ -54,64 +54,55 @@
   
   <dependencies>
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-core</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
        <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-rdfpatch</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shacl</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shex</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-tdb1</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-tdb2</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-iri3986</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-langtag</artifactId>
       <version>6.3.0-SNAPSHOT</version>
     </dependency>
@@ -119,23 +110,20 @@
     <!-- End places with commands -->
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
       <artifactId>commons-cli</artifactId>
-      <!--groupId>commons-cli</groupId-->
+      <groupId>commons-cli</groupId>
     </dependency>
 
     <!-- Pull in test code from other modules -->
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>tests</classifier>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.jena</groupId-->
+      <groupId>org.apache.jena</groupId>
       <artifactId>jena-shacl</artifactId>
       <version>6.3.0-SNAPSHOT</version>
       <classifier>tests</classifier>
@@ -144,30 +132,26 @@
 
     <!-- Command Logging -->
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.slf4j</groupId-->
+      <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
     
     <!-- Require a logging implementation -->
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.apache.logging.log4j</groupId-->
+      <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j2-impl</artifactId>
       <!-- This module can be used as a dependency downstream -->
       <optional>true</optional>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.junit.jupiter</groupId-->
+      <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>server.markhome.mcf.v3_1</groupId>
-      <!--groupId>org.junit.platform</groupId-->
+      <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-suite</artifactId>
       <scope>test</scope>
     </dependency>

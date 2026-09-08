@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>server.markhome.mcf</groupId>
-			<artifactId>server.markhome.mcf.v3_1</artifactId>
-		<version>3.1.42</version>
-	</parent>
-	<groupId>server.markhome.mcf.v3_1</groupId>
 <!--
    Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
@@ -27,12 +19,20 @@
     
      SPDX-License-Identifier: Apache-2.0
 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
   <name>Apache Jena - BOM</name>
   <artifactId>jena-bom</artifactId>
   <packaging>pom</packaging>
 
   <description>Apache Jena - Bill Of Materials</description>
+
+  <parent>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena</artifactId>
+    <version>6.3.0-SNAPSHOT</version>
+  </parent>
 
   <build>
     <plugins>
@@ -70,8 +70,7 @@
 
       <!-- Primary dependency -->
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>apache-jena-libs</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
@@ -79,135 +78,116 @@
 
       <!-- Main modules -->
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-base</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-core</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-ontapi</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-arq</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-rdfpatch</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-tdb1</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-tdb2</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-rdfconnection</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-shacl</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-shex</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-text</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-geosparql</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-permissions</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-cmds</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-server</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-access</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <!--
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!- -groupId>org.apache.jena</groupId- ->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-docker</artifactId>
         <version>${project.version}</version>
       </dependency>
       -->
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-commonsrdf</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-querybuilder</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -215,78 +195,67 @@
       <!-- Component modules -->
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-main</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-core</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-fuseki-geosparql</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-base</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-index</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-index-test</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-storage</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-transaction</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-dboe-trans-data</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-iri3986</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <dependency>
-        <groupId>server.markhome.mcf.v3_1</groupId>
-        <!--groupId>org.apache.jena</groupId-->
+        <groupId>org.apache.jena</groupId>
         <artifactId>jena-langtag</artifactId>
         <version>${project.version}</version>
       </dependency>
